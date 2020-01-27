@@ -1,0 +1,4 @@
+#!/bin/bash
+read -p 'Enter the file name : ' filename
+echo "Total sum of all values for seqlen field in $filename File :"
+x= gawk '{print $27}' $filename | sed -e $'s/,//g'|awk '{ sum+=$1} END {print sum}'
